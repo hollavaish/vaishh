@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #fce8ec; /* Light pink */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff0066; /* Pink */
+            margin-bottom: 30px;
+        }
+        #teddy {
+            width: 300px;
+            margin-bottom: 30px;
+        }
+        #buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            margin: 0 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        #noButton {
+            background-color: #ff99cc; /* Light pink */
+            color: #fff;
+        }
+        #noButton:hover {
+            transform: scale(1.1);
+        }
+        #yesButton {
+            background-color: #ff6699; /* Dark pink */
+            color: #fff;
+        }
+        #yesButton:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Will You Be My Valentine?</h1>
+        <img id="teddy" src="https://i.pinimg.com/originals/17/37/9a/17379a1e4776610710e0dab4ebc8921a.gif" alt="Cute Teddy Bear">
+        <div id="buttons">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+    </div>
+
+ <script>
+    const noButton = document.getElementById('noButton');
+
+    noButton.addEventListener('click', () => {
+        const newX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+        const newY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+        noButton.style.position = 'relative'; // Set button position to relative
+        noButton.style.left = newX + 'px';
+        noButton.style.top = newY + 'px';
+    });
+
+    const yesButton = document.getElementById('yesButton');
+    yesButton.addEventListener('click', () => {
+        window.location.href = 'next_page.html'; // Replace 'next_page.html' with the URL of your next page.
+    });
+</script>
+
+
+</body>
+</html>
+
